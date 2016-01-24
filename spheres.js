@@ -93,7 +93,9 @@ bulb.parent = bulbTwo.parent = bulbThree.parent = originBox;
 controls = new THREE.OrbitControls( camera, renderer.domElement );
     // ROOM
 
-var floorMaterial = new THREE.MeshLambertMaterial( { map: new THREE.ImageUtils.loadTexture( 'images/stonefloor.jpg' ), color: 0x888888, ambient: 0x080808, side: THREE.DoubleSide} );
+THREE.ImageUtils.crossOrigin = '';
+
+var floorMaterial = new THREE.MeshLambertMaterial( { map: THREE.ImageUtils.loadTexture( 'images/stonefloor.jpg' ), color: 0x888888, ambient: 0x080808, side: THREE.DoubleSide} );
 var floorGeometry = new THREE.PlaneGeometry(70, 70);
 var floor = new THREE.Mesh(floorGeometry, floorMaterial);
 
